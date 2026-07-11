@@ -15,7 +15,7 @@ pipeline {
                 dir('terraform') {
                     sh '''
                     export TF_IN_AUTOMATION=true
-                    terraform apply -input=false -auto-approve
+                    terraform apply -parallelism=2 -input=false -auto-approve
                     '''
                 }
             }
