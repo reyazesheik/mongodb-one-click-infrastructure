@@ -1,5 +1,5 @@
 resource "aws_instance" "mongodb" {
-  ami           = "ami-05f8b397bc5c1f2e8"
+  ami           = "ami-0b910d1016287a5e7"
   instance_type = "t2.micro"
 
   key_name = "Mongodb2-key"
