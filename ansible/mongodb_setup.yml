@@ -1,0 +1,20 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: Update packages
+      yum:
+        name: "*"
+        state: latest
+
+    - name: Install MongoDB
+      yum:
+        name: mongodb
+        state: present
+
+    - name: Start MongoDB
+      service:
+        name: mongod
+        state: started
+        enabled: yes
