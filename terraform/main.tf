@@ -4,7 +4,7 @@ resource "aws_instance" "mongodb" {
 
   key_name = "Mongodb2-key"
 
-  subnet_id = "subnet-00bf57a73c2c10c17"
+  subnet_id = "subnet-09f9e9e3f7ac68302"   # Public-Subnet-2
 
   associate_public_ip_address = true
 
