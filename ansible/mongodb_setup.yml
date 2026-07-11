@@ -15,10 +15,10 @@
           enabled=1
           gpgkey=https://pgp.mongodb.com/server-8.0.asc
 
-    - name: Clean dnf cache
+    - name: Clean DNF cache
       command: dnf clean all
 
-    - name: Build cache
+    - name: Refresh DNF cache
       command: dnf makecache
 
     - name: Install MongoDB
