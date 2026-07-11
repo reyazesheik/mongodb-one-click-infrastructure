@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     stages {
-
         stage('Terraform Init') {
             steps {
                 dir('terraform') {
@@ -14,7 +13,10 @@ pipeline {
         stage('Terraform Apply') {
             steps {
                 dir('terraform') {
-                    sh 'terraform apply -auto-approve'
+                    sh '''
+                    export TF_IN_AUTOMATION=true
+                    terraform apply -input=false -auto-approve
+                    '''
                 }
             }
         }
@@ -26,6 +28,5 @@ pipeline {
                 }
             }
         }
-
     }
 }
